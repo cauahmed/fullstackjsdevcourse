@@ -1,0 +1,31 @@
+title Submit Note Sequence Diagram
+
+note over browser:
+the user click on the 
+save button
+end note
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+server-->browser: Status Code 302: Make new HTTP GET request 
+note over browser:
+browser reloads the
+Notes page
+end note
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+server-->browser: main.js
+
+note over browser:
+browser starts executing js-code
+that requests JSON data from server 
+end note
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-->browser: [{ content: "newly added data", date: "new date" }, ...]
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+including newly added note from
+user
+end note

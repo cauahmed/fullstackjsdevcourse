@@ -1,0 +1,14 @@
+title Submit Note Single Page App
+
+note over browser:
+the user click on the 
+save button
+end note
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+note over browser:
+the HTTP POST request contains
+the JSON-data consisting of 
+the content of the note and
+timestamp
+end note
+server->browser: HTTP Status Code: 201 Created
